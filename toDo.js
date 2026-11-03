@@ -1,20 +1,31 @@
-function addTask(){
-    const getTask = document.getElementById("addtask");
-    const addTask =  addTask.value.trim();
-    if(addTask === ""){
-        alert("Please enter a Task!");
+const taskInput = document.getElementById("addtask");
+const addbtn = document.getElementById("addbtn");
+const taskList = document.getElementById("taskList");
+const error = document.getElementById("error");
+
+addbtn.addEventListener("click", () =>{
+    const task = taskInput.ariaValueMax.trim();
+
+    if(task === ""){
+        error.textContent = "please enter a task!";
+        error.classList.add("error");
         return;
     }
+
+    error.textContent = "";
+    error.classList.remove("error");
+
     const li = document.createElement("li");
-    li.textContent = addTask;
-    const dltBtn = document.createElement("button");
-    dltBtn.textContent = "Delete task";
-    document.querySelector("ul").appendChild(li);
-    dltBtn.addEventListener("click",() => {
-        li.remove();
-    })
-    li.appendChild(dltBtn);
-    if(taskList.children.length === 0){
-        console.log("No tasks available");
-    }
-}
+    li.classList.add("task-item");
+
+    const span = document.createElement("Span");
+    span.textContent = task;
+
+    const dltbtn = document.createElement("button");
+    dltbtn.textContent = "Delete";
+    dltbtn.classList.add("delete-btn");
+
+    span.addEventListener("click", () =>{
+        span.classList.toggle("completed");
+    });
+})
