@@ -1,4 +1,66 @@
-#heading {
-    background-color: yellow;
+body {
+    background-color: #819eba;
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+}
 
+.container {
+    background-color: white;
+    width: 400px;
+    padding: 25;
+    border-radius: 12px;
+    box-shadow: 0 4x 15px rgba(0,0,0,0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+.input-area {
+    display: flex;
+    gap: 8px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+button {
+    padding: 10;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#green {
+    background-color: green;
+    color: white;
+}
+
+#taskList{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f1f5f9;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 6px;
+}
+
+.dltBtn {
+    background-color: rgb(172, 94, 94)2626;
+    color: white;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: grey;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
 }
