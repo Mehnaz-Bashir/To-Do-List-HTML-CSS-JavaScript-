@@ -1,13 +1,13 @@
-const taskInput = document.getElementById("addtask");
+const taskInput = document.getElementById("addTask");
 const addbtn = document.getElementById("addbtn");
 const taskList = document.getElementById("taskList");
 const error = document.getElementById("error");
 
 addbtn.addEventListener("click", () =>{
-    const task = taskInput.ariaValueMax.trim();
+    const task = taskInput.value.trim();
 
     if(task === ""){
-        error.textContent = "please enter a task!";
+        error.textContent = "Please enter a task!";
         error.classList.add("error");
         return;
     }
@@ -23,9 +23,18 @@ addbtn.addEventListener("click", () =>{
 
     const dltbtn = document.createElement("button");
     dltbtn.textContent = "Delete";
-    dltbtn.classList.add("delete-btn");
+    dltbtn.classList.add("dltbtn");
 
     span.addEventListener("click", () =>{
         span.classList.toggle("completed");
     });
-})
+
+    dltbtn.addEventListener("click", ()=>{
+        li.remove();
+    });
+    li.appendChild(span);
+    li.appendChild(dltbtn);
+    taskList.appendChild(li);
+
+    taskInput.value ="";
+});

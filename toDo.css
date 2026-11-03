@@ -41,7 +41,7 @@ button {
 }
 
 #taskList{
-    display: flex;
+    flex-direction: column ;
     justify-content: space-between;
     align-items: center;
     background: #f1f5f9;
@@ -49,10 +49,32 @@ button {
     margin-top: 10px;
     border-radius: 6px;
 }
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f1f5f9;
+    padding: 12px;
+    border-radius:6px;
+    gap: 12px;
+}
 
-.dltBtn {
-    background-color: rgb(172, 94, 94)2626;
+.task-item span {
+    cursor: pointer;
+}
+.completed {
+    text-decoration: line-through;
+    color: grey;
+}
+
+.dltbtn {
+    background-color: #dc2626;
     color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    flex-shrink: 0;
 }
 
 .completed {
